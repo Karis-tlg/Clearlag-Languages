@@ -23,7 +23,7 @@ command.admin.enabledModules({moduleList})=&aĐã bật Mô-đun có thể tải
 command.admin.noReloadableFields({module})={module} &ckhông chứa bất kỳ trường nào có thể tải lại!
 command.admin.notEnabled({module})=&cMô-đun này chưa được kích hoạt!
 command.admin.reload({module})=&aModule {module} đã được tải lại!
-command.admin.failedReload({module})=&cKhông thể tải lại mô-đun {mô-đun}
+command.admin.failedReload({module})=&cKhông thể tải lại mô-đun {module}
 command.admin.invalidModule({argument})=&cMô-đun không hợp lệ: {argument}
 command.admin.enabledModules({modules})=&aMô-đun đã bật: &7{modules}
 command.admin.stoppedModule({module})=&aModule {module} đã &cstopped&a!
@@ -53,83 +53,84 @@ command.area.usage()=<radius>
 command.area.desc()=(Xóa các thực thể khỏi bán kính của bạn)
 command.area.error({arg})=&4Đối số không hợp lệ được chỉ định&8: &c{arg}
 command.area.message({removed},{radius})=&6[&aClearLag&6] &3{removed} &bEntities đã bị xóa trong bán kính &3{bán kính}&b!
+
 ##]-> /lagg checkchunk
 command.checkchunk.name()=checkchunk
 command.checkchunk.usage()=
-command.checkchunk.desc()=(Displays chunk's entities)
-command.checkchunk.header()=&4*&3&m                            &8(&a&lChunk Info&8)&3&m                              &4*
-command.checkchunk.tilelist()=&3 Tile Entities&8:
-command.checkchunk.entitylist()=&3 Entities&8:
-command.checkchunk.line({count},{type})=   &8- &ax{count} &7{type}
-command.checkchunk.footer()=&4*&3&m                                                                             &4*
+command.checkchunk.desc()=(Hiển thị các thực thể của chunk)
+command.checkchunk.header()=&4*&3&m &8(&a&lThông tin Chunk&8)&3&m                               &4*
+command.checkchunk.tilelist()=&3 Thực thể xếp chồng&8:
+command.checkchunk.entitylist()=&3 Thực thể&8:
+command.checkchunk.line({count},{type})= &8- &ax{count} &7{type}
+command.checkchunk.footer()=&4*&3&m                                                                              &4*
 
 ##]-> /lagg check
 command.check.name()=check
 command.check.usage()=[world1, world2...]
-command.check.desc()=(Counts entities in your world(s))
-command.check.invalidworld({arg})=&4Invalid world specified&8: {arg}
-command.check.header()=&4*&3&m                          &8(&a&lServer Status&8)&3&m                           &4*
+command.check.desc()=(Đếm các thực thể trong (các) thế giới của bạn)
+command.check.invalidworld({arg})=&4Thế giới được chỉ định không hợp lệ&8: {arg}
+command.check.header()=&4*&3&m                          &8(&a&lTrạng thái máy chủ&8)&3&m                           &4*
 command.check.printed({removed1},{mobs},{animals},{players},{chunks},{activehoppers},{inactivehoppers},{spawners},{uptime},{tps},{usedmemory},{maxmemory},{freememory})={
-&3   Items on the ground: &b{removed1}
-&3   Mobs alive: &b{mobs}
-&3   Friendly-Mobs alive: &b{animals}
-&3   Players alive: &b{players}
-&3   Chunks loaded: &b{chunks}
-&3   Active hoppers: &b{activehoppers}
-&3   Idle hoppers: &b{inactivehoppers}
-&3   Active mob spawners: &b{spawners}
-&3   Uptime: &b{uptime}
-&3   Current TPS: &b{tps}
-&3   RAM Usage: &b{usedmemory}&7/&b{maxmemory} &7MB
-&3   Free Memory: &b{freememory} &7MB
+&3 Vật phẩm trên mặt đất: &b{removed1}
+&3 Mob còn sống: &b{mobs}
+&3 Mob thân thiện còn sống: &b{animals}
+&3 Người chơi còn sống: &b{players}
+&3 Chunks đã được tải: &b{chunks}
+&3 Phễu đang hoạt động: &b{activehoppers}
+&3 Phễu không hoạt động: &b{inactivehoppers}
+&3 Mob spawners đang hoạt động: &b{spawners}
+&3 Thời gian hoạt động: &b{uptime}
+&3 TPS hiện tại: &b{tps}
+&3 Mức sử dụng RAM: &b{usedmemory}&7/&b{maxmemory} &7MB
+&3 Bộ nhớ trống: &b{freememory} &7MB
 }
 command.check.footer()=&4*&3&m                                                                             &4*
 
 ##]-> /lagg chunk
 command.chunk.name()=chunk
 command.chunk.usage()=[list-size]
-command.chunk.desc()=(Finds laggy chunks)
+command.chunk.desc()=(Tìm những chunk lag)
 command.chunk.header()=&7&m                           &7( &bLargest Chunks &7)&m                           "
 command.chunk.print({order},{world},{x},{z},{count})=&4{order}&7) &3World: &b{world}  &3x: &b{x}  &3z: &b{z}  &3Entities: &b{count}
 
 ##]-> /lagg clear
 command.clear.name()=clear
 command.clear.usage()=
-command.clear.desc()=(Clears entities from your worlds)
-command.clear.message({count})=&6[&aClearLag&6] &a&bYou just removed &3{count}&b entities!
+command.clear.desc()=(Xóa các thực thể khỏi thế giới của bạn)
+command.clear.message({count})=&6[&aClearLag&6] &a&bBạn vừa xóa &3{count}&b thực thể!
 
 ##]-> /lagg gc
 command.gc.name()=gc
 command.gc.usage()=
-command.gc.desc()=(Request garbage collecter)
-command.gc.message()=&6[&aClearLag&6] &a&bRequesting immediate garbage collection! &7(Warning: Java's VM will automatically efficiently free memory. Only use this command to debug or to force clear a large heap)
+command.gc.desc()=(Yêu cầu xoá các vật phẩm)
+command.gc.message()=&6[&aClearLag&6] &a &b Yêu cầu xoá các vật phẩm ngay lập tức! & 7(Cảnh báo: Máy chủ Java sẽ tự động giải phóng bộ nhớ một cách hiệu quả. Chỉ sử dụng lệnh này để gỡ lỗi hoặc buộc xóa số lượng vật phẩm lớn)
 
 ##]-> /lagg halt
 command.halt.name()=halt
 command.halt.usage()=[on/off]
-command.halt.desc()=(Halts most server activity)
-command.halt.halted()=&6[&aClearLag&6] &a&bServer activity has been &chalted&b!
-command.halt.unhalted()=&6[&aClearLag&6] &a&aServer activity is no longer halted!
+command.halt.desc()=(Tạm dừng hầu hết hoạt động của máy chủ)
+command.halt.halted()=&6[&aClearLag&6] &a&bHoạt động của máy chủ đã được &chalted&b!
+command.halt.unhalted()=&6[&aClearLag&6] &a&aHoạt động của máy chủ không còn bị tạm dừng nữa!
 
 ##]-> /lagg killmobs
 command.killmobs.name()=killmobs
 command.killmobs.usage()=
-command.killmobs.desc()=(Clears mobs from your worlds)
-command.killmobs.message({count})=&6[&aClearLag&6] &a&3{count} &bMobs have been removed!
+command.killmobs.desc()=(Xóa mob khỏi thế giới của bạn)
+command.killmobs.message({count})=&6[&aClearLag&6] &a&3{count} &bMob đã bị xóa!
 
 ##]-> /lagg profile
 command.profile.name()=profile
 command.profile.usage()=<sample-seconds> <sample-type>
-command.profile.desc()=(Profile lag inducing events)
-command.profile.invalidtime({arg})=&4Invalid sample time specified&8: &c{arg}
+command.profile.desc()=(Sự kiện gây lag hồ sơ)
+command.profile.invalidtime({arg})=& Thời gian mẫu được chỉ định không hợp lệ 8: &{arg}
 command.profile.invalidprofiler({arg},{profilers})={
-&4Invalid Profiler Specified&8: &c{arg}
-&cValid Profilers&8: &7{profilers}
+&4Trình phân tích hồ sơ không hợp lệ được chỉ định&8: &c{arg}
+&cTrình phân tích hợp lệ&8: &7{profilers}
 }
-command.profile.nosamples()=&cNo samples logged during sample time
+command.profile.nosamples()=&cKhông có mẫu nào được ghi lại trong thời gian lấy mẫu
 command.profile.header()=&7&m                           &7( &bChunk Samples &7)&m
 command.profile.line({listing},{world},{x},{z},{samples})=&4{listing}&7) &3World: &b{world}&7, &3x: &b{x}&7, &3z: &b{z}   &3Sample Size: &b{samples}
-command.profile.started({time})=&6[&aClearLag&6] &aProfiler started, running for &7{time} &aseconds
+command.profile.started({time})=&6[&aClearLag&6] &aProfiler đã bắt đầu, chạy trong &7{time} &aseconds
 
 ##]-> /lagg reload
 command.reload.name()=reload
