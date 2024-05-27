@@ -5,34 +5,34 @@
 # -- NOTE: The { ... } symbols represent a message block. This is applicable anywhere you want... Do not include any characters with {, or }
 
 ####----> Commands -->
-command.error.wrongUsage({usage},{name})=&cWrong usage: &8/&7lagg {name} {usage}
-command.error.noPermission({name})=&cYou do not have permission to use &8/&7lagg {name}
-command.error.onlyForPlayer()=&cThis command can only be used by players!
+command.error.wrongUsage({usage},{name})=&cSử dụng sai: &8/&7lagg {name} {usage}
+command.error.noPermission({name})=&cBạn không có quyền sử dụng &8/&7lagg {name}
+command.error.onlyForPlayer()=&cLệnh này chỉ có thể được sử dụng bởi người chơi!
 
 ##]-> /lagg
-command.lagg.nopermission()=&cYou do not have permission to use this command!
+command.lagg.nopermission()=&cBạn không có quyền sử dụng lệnh này!
 command.lagg.header()=&3-------------(&b&lYour Clearlag Commands&3)-------------
 command.lagg.footer()=&3----------------------------------------------------
 command.lagg.helpline({name},{desc})= &4- &8/&3lagg &b{name} &f -  {desc}
 
 ##]-> /lagg admin
 command.admin.name()=admin
-command.admin.desc()=(Control Clearlag's modules)
+command.admin.desc()=(Điều khiển các module của Clearlag)
 command.admin.usage()=
-command.admin.enabledModules({moduleList})=&aEnabled Reloadable modules: &7{moduleList}
-command.admin.noReloadableFields({module})={module} &cdoes not contain any reloadable fields!
-command.admin.notEnabled({module})=&cThis module is not enabled!
-command.admin.reload({module})=&aModule {module} has been reloaded!
-command.admin.failedReload({module})=&cFailed to reload module {module}
-command.admin.invalidModule({argument})=&cInvalid module: {argument}
-command.admin.enabledModules({modules})=&aEnabled Modules: &7{modules}
-command.admin.stoppedModule({module})=&aModule {module} has been &cstopped&a!
-command.admin.startableModules({modules})=&aStart-able Modules: &7{modules}
-command.admin.alreadyEnabled({module})=&cThis module is already enabled!
-command.admin.enabled({module})=&aModule {module} has been enabled!
+command.admin.enabledModules({moduleList})=&aĐã bật Mô-đun có thể tải lại: &7{moduleList}
+command.admin.noReloadableFields({module})={module} &ckhông chứa bất kỳ trường nào có thể tải lại!
+command.admin.notEnabled({module})=&cMô-đun này chưa được kích hoạt!
+command.admin.reload({module})=&aModule {module} đã được tải lại!
+command.admin.failedReload({module})=&cKhông thể tải lại mô-đun {mô-đun}
+command.admin.invalidModule({argument})=&cMô-đun không hợp lệ: {argument}
+command.admin.enabledModules({modules})=&aMô-đun đã bật: &7{modules}
+command.admin.stoppedModule({module})=&aModule {module} đã &cstopped&a!
+command.admin.startableModules({modules})=&aMô-đun có thể khởi động: &7{modules}
+command.admin.alreadyEnabled({module})=&cMô-đun này đã được kích hoạt!
+command.admin.enabled({module})=&aModule {module} đã được bật!
 command.admin.moduleStatus({listeners},{commands},{tasks},{modules})={
-&3=--------------[&6-&3] &b&lModule Status &3[&6-&3]----------------=
-              &8[&7Gray = Disabled&8]   &8[&aGreen = Enabled&8]
+&3=--------------[&6-&3] &b&lTrạng thái mô-đun &3[&6-&3]----------------=
+              &8[&7Gray = Đã tắt&8] &8[&aGreen = Đã bật&8]
 &6Listeners: {commands}
 &6Commands: {commands}
 &6Tasks: {tasks}
@@ -48,12 +48,11 @@ command.admin.help()={
 }
 
 ##]-> /lagg area
-command.area.name()=area
+command.area.name()=khu vực
 command.area.usage()=<radius>
-command.area.desc()=(Clears entities from your radius)
-command.area.error({arg})=&4Invalid argument specified&8: &c{arg}
-command.area.message({removed},{radius})=&6[&aClearLag&6] &3{removed} &bEntities have been removed within a radius of &3{radius}&b!
-
+command.area.desc()=(Xóa các thực thể khỏi bán kính của bạn)
+command.area.error({arg})=&4Đối số không hợp lệ được chỉ định&8: &c{arg}
+command.area.message({removed},{radius})=&6[&aClearLag&6] &3{removed} &bEntities đã bị xóa trong bán kính &3{bán kính}&b!
 ##]-> /lagg checkchunk
 command.checkchunk.name()=checkchunk
 command.checkchunk.usage()=
